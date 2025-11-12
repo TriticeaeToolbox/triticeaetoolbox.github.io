@@ -1,0 +1,41 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="container">
+  <h3>T3 is Open Source</h3>
+  <p>T3 is open-source software, based on <a href="https://breedbase.org" target="_blank">breedbase</a>, developed by the <a href="https://btiscience.org/lukas-mueller/" target="_blank">Lukas Mueller lab at The Boyce Thompson Institute</a>.</p>
+
+  <div class="w-full flex flex-wrap space-around gap-8">
+    <div class="card flex-auto">
+      <img src="/t3.png" class="h-32 mx-auto" />
+      <p>
+        <Icon name="octicon:logo-github-16" class="inline mr-4" />
+        <a href="https://github.com/TriticeaeToolbox/sgn/tree/t3/master" target="_blank">TriticeaeToolbox/sgn</a>
+      </p>
+      <p>
+        <img src="/docker-logo-blue.png" class="h-4 inline mr-4" />
+        <a href="https://hub.docker.com/r/triticeaetoolbox/breedbase_web" target="_blank">triticeaetoolbox/breedbase_web</a>
+      </p>
+      <p>
+        <Icon name="mdi:information-outline" class="inline mr-4" />
+        <a href="https://github.com/TriticeaeToolbox/breedbase" target="_blank">Installation Instructions</a>
+      </p>
+    </div>
+    <div class="card flex-auto">
+      <img src="/breedbase.png" class="h-32 mx-auto" />
+      <p>
+        <Icon name="octicon:logo-github-16" class="inline mr-4" />
+        <a href="https://github.com/solgenomics/sgn" target="_blank">solgenomics/sgn</a>
+      </p>
+      <p>
+        <img src="/docker-logo-blue.png" class="h-4 inline mr-4" />
+        <a href="https://hub.docker.com/r/breedbase/breedbase" target="_blank">breedbase/breedbase</a>
+      </p>
+      <p>
+        <Icon name="mdi:information-outline" class="inline mr-4" />
+        <a href="https://github.com/solgenomics/breedbase_site" target="_blank">Installation Instructions</a>
+      </p>
+    </div>
+  </div>
+</div>

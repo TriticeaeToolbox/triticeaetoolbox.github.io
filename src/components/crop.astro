@@ -1,0 +1,10 @@
+---
+const { crop } = Astro.props;
+---
+
+<div class="container">
+  <h2 class="uppercase">{ crop }</h2>
+  <div class="flex flex-wrap justify-center my-4 gap-4">
+    <slot />
+  </div>
+</div>    
