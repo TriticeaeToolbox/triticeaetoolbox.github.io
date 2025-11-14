@@ -4,17 +4,70 @@ import Instance from '../components/instance.astro';
 ---
 
 <Crop crop="wheat">
-  <Instance title="T3/Wheat" logo="wheat_square.png" url="wheat.triticeaetoolbox.org" />
-  <Instance title="T3/Wheat Sandbox" logo="wheat_square.png" url="wheat-sandbox.triticeaetoolbox.org" sandbox />
-  <Instance title="T3/WheatCAP" logo="wheat_square.png" url="wheatcap.triticeaetoolbox.org" description="T3/WheatCAP is a closed database available to WheatCAP participants.  New accounts have to be approved by the website administrators." closed />
+  <Instance
+    title="T3/Wheat"
+    logo="wheat_square.png"
+    description="A curated public wheat database, where any user can access and download data"
+    url="wheat.triticeaetoolbox.org"
+  />
+  <Instance sandbox
+    title="T3/Wheat Sandbox"
+    logo="wheat_square.png"
+    description="A sandbox version of the public wheat database, where any user can upload data to test out the database"
+    url="wheat-sandbox.triticeaetoolbox.org"
+  />
+  <Instance closed
+    title="T3/WheatCAP"
+    logo="wheat_square.png"
+    description="A private wheat database available to WheatCAP participants.  New accounts have to be approved by the website administrators."
+    url="wheatcap.triticeaetoolbox.org"
+  />
+  <Instance classic
+    title="T3/Wheat Classic"
+    logo="wheat_classic.png"
+    description="The original T3 wheat database with data up to January 2020"
+    url="triticeaetoolbox.org/wheat?old=1"
+  />
 </Crop>
 
 <Crop crop="oat">
-  <Instance title="T3/Oat" logo="oat_square.png" url="oat.triticeaetoolbox.org" />
-  <Instance title="T3/Oat Sandbox" logo="oat_square.png" url="oat-sandbox.triticeaetoolbox.org" sandbox />
+  <Instance
+    title="T3/Oat"
+    logo="oat_square.png"
+    description="A curated public oat database, where any user can access and download data"
+    url="oat.triticeaetoolbox.org"
+  />
+  <Instance sandbox
+    title="T3/Oat Sandbox"
+    logo="oat_square.png"
+    description="A sandbox version of the public oat database, where any user can upload data to test out the database"
+    url="oat-sandbox.triticeaetoolbox.org"
+  />
+  <Instance classic
+    title="T3/Oat Classic"
+    logo="oat_classic.png"
+    description="The original T3 oat database with data up to March 2020"
+    url="triticeaetoolbox.org/oat?old=1"
+  />
 </Crop>
 
 <Crop crop="barley">
-  <Instance title="T3/Barley" logo="barley_square.png" url="barley.triticeaetoolbox.org" />
-  <Instance title="T3/Barley Sandbox" logo="barley_square.png" url="barley-sandbox.triticeaetoolbox.org" sandbox />
+  <Instance
+    title="T3/Barley"
+    logo="barley_square.png"
+    description="A curated public barley database, where any user can access and download data"
+    url="barley.triticeaetoolbox.org"
+  />
+  <Instance sandbox
+    title="T3/Barley Sandbox"
+    logo="barley_square.png"
+    description="A sandbox version of the public barley database, where any user can upload data to test out the database"
+    url="barley-sandbox.triticeaetoolbox.org"
+  />
+  <Instance classic
+    title="T3/Barley Classic"
+    logo="barley_classic.png"
+    description="The original T3 barley database with data up to June 2020"
+    url="triticeaetoolbox.org/barley?old=1"
+  />
 </Crop>

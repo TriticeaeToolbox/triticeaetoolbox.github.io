@@ -1,18 +1,35 @@
 ---
 import { Icon } from 'astro-icon/components'
-const { title, logo, url, description, sandbox, closed } = Astro.props;
+const { title, logo, url, description, sandbox, closed, classic } = Astro.props;
 ---
 
-<a href=`https://${url}` class="card w-full max-w-[300px] cursor-pointer opacity-90 hover:opacity-100 scale-97 hover:scale-100 group transition duration-500" >
+<a href=`https://${url}` class=`card ${classic ? 'bg-gray-600/20!' : 'bg-white'}  w-full max-w-[300px] cursor-pointer ${classic ? 'opacity-60' : 'opacity-90'} hover:opacity-100 scale-97 hover:scale-100 group transition duration-500` >
   <div class="flex flex-col justify-items-stretch items-center h-full">
-    <h3 class="text-center">{ title }</h3>
-    { logo ? <img src={logo} class="mx-auto h-24 w-fit rounded-full shadow-md border-2 border-white ring-2 ring-gray-200 opacity-75 group-hover:opacity-100 group-hover:-rotate-5 group-hover:scale-105 transition duration-500" /> : '' }
-    { description ? <p class="text-sm text-gray-600 text-center">{description}</p> : '' }
+    <h3 class="text-center h-18">{ title }</h3>
+    { logo && 
+      <img src={logo} class=`mx-auto h-24 w-24 object-cover rounded-full shadow-md border-2 border-white ring-2 ring-gray-200 opacity-75 group-hover:opacity-100 ${!classic ? 'group-hover:-rotate-5' : ''} group-hover:scale-105 transition duration-500` />
+    }
+    { description && 
+      <p class="text-sm text-gray-600 text-center">{description}</p>
+    }
     <div class="grow"></div>
-    <p class="pt-4 pb-2 lowercase text-sm text-gray-600 text-center tracking-tight">{ url }</p>
+    <p class="pt-4 pb-2 mb-0! lowercase text-sm text-gray-600 text-center tracking-tight">
+      { url }
+    </p>
   </div>
-  { sandbox || closed ? <div class="card-footer text-center text-white font-semibold bg-[#c84c30]">
-    { sandbox ? <span>SANDBOX</span>: '' }
-    { closed ? <span><Icon name="mdi:lock" class="inline" /></span> : '' }
-  </div> : '' }
+  { sandbox && 
+    <div class="card-footer text-center text-white bg-[#c84c30] font-semibold">
+      <span>SANDBOX</span>
+    </div>
+  }
+  { closed && 
+    <div class="card-footer text-center text-white bg-[#c84c30] font-semibold">
+      <span><Icon name="mdi:lock" class="inline" /></span>
+    </div>
+  }
+  { classic && 
+    <div class="card-footer text-center text-white bg-gray-600 font-semibold">
+      <span>DISCONTINUED</span>
+    </div>
+  }
 </a>

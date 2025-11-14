@@ -12,7 +12,7 @@ import { Icon } from 'astro-icon/components'
   <!-- header text -->
   <div class="relative z-10 flex flex-col items-center justify-start h-screen text-center transition duration-750 opacity-0 -translate-y-12" data-replace='{"opacity-0": "opacity-100", "-translate-y-12": "translate-y-0"}' >
     <h1 class="title" data-parallax data-speed="0.85">The Triticeae Toolbox</h1>
-    <div id="subtitle" class="subtitle opacity-50 hover:opacity-80" data-parallax data-fade data-speed="0.55">
+    <div id="subtitle" class="subtitle opacity-50 hover:opacity-80" data-parallax data-fade data-speed="0.95">
       <Icon name="line-md:arrow-down" />
       <p>View Databases</p>
       <Icon name="line-md:arrow-down" />
@@ -28,7 +28,7 @@ import { Icon } from 'astro-icon/components'
 
   // Add parallax scrolling to header
   const parallaxEls = document.querySelectorAll('[data-parallax]') as NodeListOf<HTMLElement>;
-  window.addEventListener('scroll', (event) => {
+  window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset;
     parallaxEls.forEach(el => {
       const speed = parseFloat(el.getAttribute('data-speed') || '1');
