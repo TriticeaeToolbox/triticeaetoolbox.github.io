@@ -27,7 +27,7 @@ import { Icon } from 'astro-icon/components'
 
     <!-- Scroll link -->
     <div class="transition duration-750 opacity-0 translate-y-12" data-delay="1500" data-replace='{"opacity-0": "opacity-100", "translate-y-12": "translate-y-0"}'>
-      <div id="show-databases" class="mb-24 px-4 py-2 bg-amber-800 rounded-2xl font-bold text-white opacity-60 hover:opacity-80 cursor-pointer flex items-center gap-4" data-parallax data-fade data-speed="0.45">
+      <div id="show-databases" class="mb-24 px-4 py-2 bg-amber-800 rounded-2xl font-bold text-white cursor-pointer flex items-center gap-4" data-parallax data-fade data-speed="0.45">
         <Icon name="line-md:arrow-down" />
         <p class="m-0!">View Databases</p>
         <Icon name="line-md:arrow-down" />
@@ -71,7 +71,6 @@ import { Icon } from 'astro-icon/components'
             starting = parseFloat(e.split("-")[1])/100;
           }
         });
-        console.log("STARTING: " + starting);
 
         // Calculate delta between el y position and bottom of header
         const elTop = el.getBoundingClientRect().bottom;

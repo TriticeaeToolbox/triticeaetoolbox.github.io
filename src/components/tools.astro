@@ -1,9 +1,42 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
 <div class="container">
   <h3>T3 Tools</h3>
 
+  <h4 class="tools-title">
+    Synonym Search Tool
+    <span class="pill">
+      <a href="https://github.com/TriticeaeToolbox/BrAPI-germplasm-search" target="_blank">
+        <Icon name="octicon:mark-github-16" class="inline mr-2" />TriticeaeToolbox/BrAPI-germplasm-search
+      </a>
+    </span>
+  </h4>
+  <p class="text-justify">The Synonym Search Tool is a <a href="https://brapi.org" target="_blank">BrAPI</a> (Breeding Application Programming Interface) compatible app that can be used to find germplasm in any BrAPI-compliant database (such as T3 or any other breedbase instance) that match or are similar to the user-provided list of germplasm names.  This tool is used in an effort to reduce the number of duplicate germplasm entries with variations in names.</p>
+  <p class="text-justify">The standalone search tool is available at: <a href="https://synonyms.triticeaetoolbox.org" target="_blank">https://synonyms.triticeaetoolbox.org</a>.  In addition, the search tool is integrated into the accession and trial uploads on T3 so that every new germplasm entry in T3 is first searched against existing entries before being added to the database.</p>
+  <p class="text-justify">The source code for the search tool is <a href="https://github.com/TriticeaeToolbox/BrAPI-germplasm-search" target="_blank">availabe on GitHub</a>.</p>
 
-  <p>Synonym Search Tool</p>
-  <p>BrAPI R package</p>
-  <p>Breedbase R package</p>
+  <h4 class="tools-title">
+    BrAPI R package
+    <span class="pill">
+      <a href="https://github.com/TriticeaeToolbox/BrAPI.R" target="_blank">
+        <Icon name="octicon:mark-github-16" class="inline mr-2" />TriticeaeToolbox/BrAPI.R
+      </a>
+    </span>
+  </h4>
+  <p class="text-justify">The T3 BrAPI R package includes some simple wrapper functions for making HTTP BrAPI requests in R.  It includes information required to connect to a T3 instance via BrAPI as well as functions for making <code>GET</code>, <code>POST</code>, and <code>PUT</code> requests using BrAPI endpoints.  While the core BrAPI functions will work with any BrAPI-compliant database, the package also includes some breedbase-specific functions, such as interacting with the breedbase Search Wizard directly in R.</p>
+  <p class="text-justify">For more information on how to install the package and its usage, view <a href="https://github.com/TriticeaeToolbox/BrAPI.R" target="_blank">the package's README on GitHub</a>.</p>
+
+  <h4 class="tools-title">
+    Breedbase R package
+    <span class="pill">
+      <a href="https://github.com/TriticeaeToolbox/breedbase.R" target="_blank">
+        <Icon name="octicon:mark-github-16" class="inline mr-2" />TriticeaeToolbox/breedbase.R
+      </a>
+    </span>
+  </h4>
+  <p class="text-justify">The Breedbase R package is a set of classes and functions that represent each of the major data types on T3 / breedbase (Accessions, Locations, Trials, Observations, etc).  These classes and functions can then be used to generate upload templates used to add new data to the database.  These tools are helpful when parsing existing data into files to be uploaded to a breedbase database.</p>
+  <p class="text-justify">For more information on how to install the package and its usage, view <a href="https://github.com/TriticeaeToolbox/breedbase.R" target="_blank">the package's README on GitHub</a>.</p>
 
 </div>
