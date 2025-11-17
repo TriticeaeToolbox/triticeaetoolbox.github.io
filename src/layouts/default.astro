@@ -19,11 +19,14 @@ import '../styles/global.css'
   document.addEventListener("DOMContentLoaded", function(){
     var replacers = document.querySelectorAll('[data-replace]') as NodeListOf<HTMLElement>;
     for ( const replacer of replacers ) {
+      const delay = parseInt(replacer.dataset.delay || '0');
       let replaceClasses = JSON.parse((replacer.dataset.replace || '').replace(/'/g, '"'));
-      Object.keys(replaceClasses).forEach(function(key) {
-        replacer.classList.remove(key);
-        replacer.classList.add(replaceClasses[key]);
-      });
+      setTimeout(() => {
+        Object.keys(replaceClasses).forEach(function(key) {
+          replacer.classList.remove(key);
+          replacer.classList.add(replaceClasses[key]);
+        });
+      }, delay);
     }
   });
 </script>

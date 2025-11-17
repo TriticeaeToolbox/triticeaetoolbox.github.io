@@ -9,22 +9,48 @@ import { Icon } from 'astro-icon/components'
     <img src="/wheat-2.jpg" class="w-full h-full object-cover" />
   </div>
 
-  <!-- header text -->
-  <div class="relative z-10 flex flex-col items-center justify-start h-screen text-center transition duration-750 opacity-0 -translate-y-12" data-replace='{"opacity-0": "opacity-100", "-translate-y-12": "translate-y-0"}' >
-    <h1 class="title" data-parallax data-speed="0.85">The Triticeae Toolbox</h1>
-    <div id="subtitle" class="subtitle opacity-50 hover:opacity-80" data-parallax data-fade data-speed="0.95">
-      <Icon name="line-md:arrow-down" />
-      <p>View Databases</p>
-      <Icon name="line-md:arrow-down" />
+  <!-- header items -->
+  <div class="relative z-10 flex flex-col items-center h-screen text-center" >
+
+    <!-- Title -->
+    <div class="transition duration-750 opacity-0 -translate-y-12" data-replace='{"opacity-0": "opacity-100", "-translate-y-12": "translate-y-0"}'>
+      <h1 class="title z-10!" data-parallax data-speed="0.85">The Triticeae Toolbox</h1>
     </div>
+
+    <!-- Subtitle -->
+    <div class="transition duration-1500 opacity-0 py-4 px-8 z-9!" data-replace='{"opacity-0": "opacity-100"}'>
+      <h3 id="subtitle" class="opacity-80" data-parallax data-fade data-speed="0.82">Public breeding databases for wheat, oat, and barley</h3>
+    </div>
+
+    <!-- Spacer -->
+    <div class="flex-grow"></div>
+
+    <!-- Scroll link -->
+    <div class="transition duration-750 opacity-0 translate-y-12" data-delay="1500" data-replace='{"opacity-0": "opacity-100", "translate-y-12": "translate-y-0"}'>
+      <div id="show-databases" class="mb-24 px-4 py-2 bg-amber-800 rounded-2xl font-bold text-white opacity-60 hover:opacity-80 cursor-pointer flex items-center gap-4" data-parallax data-fade data-speed="0.45">
+        <Icon name="line-md:arrow-down" />
+        <p class="m-0!">View Databases</p>
+        <Icon name="line-md:arrow-down" />
+      </div>
+    </div>
+
   </div>
 
 </section>
 <div id="header-bottom"></div>
 
 <script>
-  // Get max scroll of header
-  const maxScrollTop = document.getElementById('header')?.offsetWidth || 0;
+
+  // Set initial y deltas for fade items
+  document.addEventListener("DOMContentLoaded", function(event) {
+    const fadeEls = document.querySelectorAll('[data-fade]') as NodeListOf<HTMLElement>;
+    fadeEls.forEach((el) => {
+      const elTop = el.getBoundingClientRect().bottom;
+      const bottom = document.getElementById('header')?.getBoundingClientRect().bottom || elTop;
+      const diff = bottom-elTop;
+      el.dataset.init = `${diff}`;
+    })
+  });
 
   // Add parallax scrolling to header
   const parallaxEls = document.querySelectorAll('[data-parallax]') as NodeListOf<HTMLElement>;
@@ -37,21 +63,33 @@ import { Icon } from 'astro-icon/components'
       // Add optional fading
       const fade = el.hasAttribute('data-fade');
       if ( fade ) {
+
+        // Set intial opacity level
         let starting = 1;
         el.classList.forEach((e) => {
           if ( e.startsWith("opacity-") ) {
             starting = parseFloat(e.split("-")[1])/100;
           }
-        })
-        const opacity = starting-(scrollTop/maxScrollTop);
+        });
+        console.log("STARTING: " + starting);
+
+        // Calculate delta between el y position and bottom of header
+        const elTop = el.getBoundingClientRect().bottom;
+        const bottom = document.getElementById('header')?.getBoundingClientRect().bottom || elTop;
+        const calc = bottom - elTop;
+        const init = el.dataset.init;
+        const delta = init ? calc / parseInt(init) : starting;
+
+        // Set opacity as a function of starting opacity and delta y
+        const opacity = starting * delta;
         el.style.opacity = fade ? `${opacity}` : `1`;
       }
 
     });
   });
 
-  // Add scroll link to subtitle
-  document.getElementById("subtitle")?.addEventListener('click', () => {
+  // Add scroll link to show databases link
+  document.getElementById("show-databases")?.addEventListener('click', () => {
     const header = document.getElementById("header-bottom");
     header?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
