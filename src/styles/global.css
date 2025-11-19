@@ -16,18 +16,18 @@ h2 {
 }
 
 h3 {
-  @apply font-serif text-xl md:text-2xl lg:text-3xl font-semibold text-gray-700 mb-2 md:mb-4 lg:mb-8;
+  @apply font-serif text-xl md:text-2xl lg:text-3xl font-semibold text-gray-700 my-2 md:my-4 lg:my-8;
 }
 
 h4 {
-  @apply font-serif text-lg md:text-xl lg:text-2xl font-semibold text-gray-700 mt-12 mb-4 border-b border-gray-600/40;
+  @apply font-serif text-lg md:text-xl lg:text-2xl font-semibold text-gray-700 mt-4 md:mt-8 lg:mt-12 mb-4 border-b border-gray-600/40;
 }
 
 .container {
   @apply w-full max-w-4xl mx-auto p-4 my-2 md:p-4 md:my-4 lg:p-8 lg:my-8;
 }
 .card {
-  @apply p-2 md:p-4 lg:p-8;
+  @apply p-8;
   @apply relative bg-white border border-gray-200 rounded-md;
 }
 .card-footer {
