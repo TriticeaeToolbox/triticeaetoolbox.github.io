@@ -39,8 +39,9 @@ T3 contains links that may lead to other websites. If you click on these links T
 
 ## Restricting the Collection of your Personal Data
 At some point, you might wish to restrict the use and collection of your personal data. You can achieve this by doing the following:
-	- When you are creating an account, you may opt-out of the T3 mailing list
-	- If you've already created an account, you can remove yourself from the mailing list by following the Unsubscrible link at the bottom of the mailing list email.
-	- If you want your account removed, feel free to contact us using the 'Contact Us' link on any T3 website and ask to have your account removed.
+
+- When you are creating an account, you may opt-out of the T3 mailing list
+- If you've already created an account, you can remove yourself from the mailing list by following the Unsubscrible link at the bottom of the mailing list email.
+- If you want your account removed, feel free to contact us using the 'Contact Us' link on any T3 website and ask to have your account removed.
 
 The Triticeae Toolbox will not lease, sell or distribute your personal information to any third parties, unless we have your permission.
