@@ -1,9 +1,9 @@
 ---
 import { Icon } from 'astro-icon/components'
-const { title, logo, url, description, sandbox, closed, classic } = Astro.props;
+const { title, logo, url, description, sandbox, closed, classic, message } = Astro.props;
 ---
 
-<a href=`https://${url}` class=`card ${classic ? 'bg-gray-600/20!' : 'bg-white'}  w-full max-w-[300px] cursor-pointer ${classic ? 'opacity-60' : 'opacity-90'} hover:opacity-100 scale-97 hover:scale-100 group transition duration-500` >
+<a href={url ? `https://${url}` : undefined} data-message={message} class=`card ${classic ? 'bg-gray-600/20!' : 'bg-white'}  w-full max-w-[300px] cursor-pointer ${classic ? 'opacity-60' : 'opacity-90'} hover:opacity-100 scale-97 hover:scale-100 group transition duration-500`>
   <div class="flex flex-col justify-items-stretch items-center h-full">
     <h3 class="text-center mt-0! h-18">{ title }</h3>
     { logo && 
@@ -33,3 +33,27 @@ const { title, logo, url, description, sandbox, closed, classic } = Astro.props;
     </div>
   }
 </a>
+
+<dialog id="instance-message-dialog" class="mx-auto my-auto max-w-lg rounded-md p-4 bg-[#c84c30] text-white font-semibold shadow-lg border-2 border-white">
+  <p></p>
+  <form method="dialog">
+    <button class="bg-gray-200 text-gray-900 py-2 px-4 rounded-md hover:bg-gray-300 cursor-pointer">Close</button>
+  </form>
+</dialog>
+
+
+<script>
+  const dialog = document.getElementById('instance-message-dialog') as HTMLDialogElement | null;
+  const cards = document.querySelectorAll('.card[data-message]');
+  
+  cards.forEach(card => {
+    card.addEventListener('click', (event) => {
+      const message = card.getAttribute('data-message');
+      if (message && dialog) {
+        const p = dialog.querySelector('p');
+        if (p) p.innerHTML = message;
+        dialog.showModal();
+      }
+    });
+  });
+</script>
